@@ -9,7 +9,8 @@ namespace CupcakeSplitter
             
             Console.WriteLine("How many cupcakes do you have?");
             int cupcakes = -1;
-            while (!(int.TryParse(Console.ReadLine(), out cupcakes) && cupcakes > 0))
+            // don't continue until the TryParse succeeds and cupcakes > 0
+            while (!int.TryParse(Console.ReadLine(), out cupcakes) || cupcakes <= 0)
             {
                 Console.WriteLine("Please enter a whole number!");
             }
@@ -23,19 +24,13 @@ namespace CupcakeSplitter
             }
 
 
-            try
-            {
-                int cupcakesPerPerson = cupcakes / people;
+            int cupcakesPerPerson = cupcakes / people;
 
-                int remainingCupcakes = cupcakes % people;
+            int remainingCupcakes = cupcakes % people;
 
-                Console.WriteLine("Each person gets {0} cupcakes, and there are {1} left over.",
-                    cupcakesPerPerson, remainingCupcakes);
-            }
-            finally
-            {
-                Console.WriteLine("Thanks for playing!");
-            }
+            Console.WriteLine("Each person gets {0} cupcakes, and there are {1} left over.",
+                cupcakesPerPerson, remainingCupcakes);
+        
                 
         }
     }
