@@ -24,10 +24,6 @@ namespace CupcakeSplitter
             {
                 Console.WriteLine("You can't split cupcakes with zero people!");
             }
-            catch (ArithmeticException)
-            {
-                Console.WriteLine("We got an arithmetic exception, what?");
-            }
             catch (FormatException)
             {
                 Console.WriteLine("Please type a whole number!");
