@@ -28,7 +28,12 @@ namespace CupcakeSplitter
             {
                 Console.WriteLine("Please type a whole number!");
             }
+            finally
+            {
+                Console.WriteLine("Thanks for playing!");
+            }
 
+            Console.WriteLine("Now the program is ending");
 
         }
     }
